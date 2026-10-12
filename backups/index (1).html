@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPC SARLU | Custom corrugated packaging in Madagascar</title>
+<meta name="description" content="IPC SARLU manufactures custom single, double and triple wall corrugated cartons in Ivato, Madagascar. FSC chain of custody, multi-colour printing, export-ready packaging.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#123D2E; --forest-2:#1B5340; --kraft:#C08A43; --kraft-d:#8A5E22;
+  --board:#EADFCB; --paper:#FBFAF7; --ink:#1C211E; --muted:#4D5650; --line:#D9D2C3;
+  --display:'Bricolage Grotesque',Georgia,serif; --body:'Figtree',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 1.0625rem/1.65 var(--body);color:var(--ink);background:var(--paper)}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--kraft);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700;margin-bottom:1rem}
+h3{font-size:1.25rem;font-weight:700;margin-bottom:.4rem}
+p{max-width:62ch}
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:6px;font-weight:600;text-decoration:none;cursor:pointer;border:2px solid transparent;font:600 1rem var(--body);transition:background .2s,color .2s}
+.btn-k{background:var(--kraft);color:#1C1409}.btn-k:hover{background:#D49A52}
+.btn-o{border-color:currentColor;color:#fff}.btn-o:hover{background:#fff;color:var(--forest)}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(18,61,46,.97);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.7rem 0}
+.logo{font:700 1.2rem var(--display);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.logo i{width:30px;height:22px;border:2px solid var(--kraft);border-radius:3px;background:repeating-linear-gradient(90deg,var(--kraft) 0 2px,transparent 2px 6px)}
+nav{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;padding:.3rem 0;cursor:pointer}
+nav a:hover{color:var(--kraft)}
+.soc{display:flex;gap:.7rem}
+.soc a{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.35);border-radius:50%}
+.soc a:hover{background:var(--kraft);border-color:var(--kraft);color:#1C1409}
+.soc svg{width:16px;height:16px;fill:currentColor}
+
+/* hero */
+.hero{background:var(--forest);color:#fff;padding-bottom:0}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+.hero p.lead{font-size:1.2rem;color:#DCE7E1;margin:1.2rem 0 2rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.walls{background:var(--paper);color:var(--ink);border-radius:10px;padding:1.4rem;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.tabs{display:flex;gap:.4rem;margin-bottom:1rem}
+.tabs button{flex:1;padding:.6rem;border:1.5px solid var(--line);background:#fff;border-radius:6px;font:600 .95rem var(--body);cursor:pointer;color:var(--ink)}
+.tabs button[aria-selected=true]{background:var(--forest);border-color:var(--forest);color:#fff}
+#wallsvg{color:var(--kraft-d);background:var(--board);border-radius:6px;padding:1rem .6rem}
+#wallsvg path{transition:opacity .3s}
+.walls p{margin-top:1rem;font-size:.98rem;color:var(--muted)}
+.flute{height:14px;margin-top:clamp(3rem,7vw,5rem);background:radial-gradient(circle at 10px 0,transparent 8px,var(--paper) 9px) 0 0/20px 14px repeat-x}
+
+/* placeholders */
+.ph{position:relative;border-radius:8px;overflow:hidden;min-height:280px;background:
+  repeating-linear-gradient(90deg,rgba(138,94,34,.18) 0 3px,transparent 3px 11px),var(--kraft);background-size:cover;background-position:center}
+.ph::after{content:attr(data-label);position:absolute;left:.8rem;bottom:.8rem;background:rgba(18,61,46,.88);color:#fff;font-size:.85rem;padding:.3rem .65rem;border-radius:4px}
+.ph.on::after{display:none}
+
+/* about + pillars */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.pillars{background:var(--board)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem 2rem;margin-top:2.2rem}
+.pgrid div{border-top:3px solid var(--forest);padding-top:1rem}
+.pgrid p{font-size:.98rem;color:var(--muted)}
+
+/* products */
+
+/* industries */
+.ind{background:var(--forest);color:#fff}
+.ind ul{list-style:none;padding:0;margin-top:2rem;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.ind li{padding:1.2rem 1rem;border:1px solid rgba(255,255,255,.28);border-radius:8px;font:600 1.05rem var(--display)}
+
+/* csr */
+.csr{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+
+/* contact */
+.contact{background:var(--ink);color:#fff}
+.cgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem}
+.contact address{font-style:normal;margin-top:1.2rem;color:#D5DBD7}
+.contact address a{color:var(--kraft)}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.3rem;font-weight:500;font-size:.95rem}
+input,textarea{padding:.75rem .85rem;border:1.5px solid #5B655F;border-radius:6px;background:#fff;font:1rem var(--body);color:var(--ink);width:100%}
+textarea{min-height:130px;resize:vertical}
+footer{background:#111513;color:#B7C0BA;padding:1.6rem 0;font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+
+
+/* product carousel */
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.6rem 0 1.2rem}
+.chips button{padding:.55rem 1rem;border:1.5px solid var(--forest);border-radius:999px;background:transparent;color:var(--forest);font:600 .93rem var(--body);cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--forest);color:#fff}
+.car{position:relative;display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;padding:.5rem max(1.25rem,calc((100% - 1120px)/2)) 1.5rem;scroll-padding-inline:max(1.25rem,calc((100% - 1120px)/2))}
+.car::-webkit-scrollbar{display:none}
+.card{flex:0 0 min(82vw,390px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.art{aspect-ratio:4/3;display:grid;place-items:center;background:repeating-linear-gradient(90deg,rgba(138,94,34,.10) 0 3px,transparent 3px 10px),var(--board);background-size:cover;background-position:center}
+.art svg{width:90%}
+.art.on svg{display:none}
+.art polygon,.art ellipse,.art path{stroke:#4A3213;stroke-width:1.4;stroke-linejoin:round}
+.f1{fill:#DDB478}.f2{fill:#C08A43}.f3{fill:#9A6B2C}.fin{fill:#5B3E17}.tape{fill:#F1E3C2}.lab{fill:#FBFAF7}.dv{fill:#E8C98F}
+.card .body{padding:1.2rem 1.4rem 1.4rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
+.fam-name{font-size:.88rem;font-weight:600;color:var(--kraft-d)}
+.card p{color:var(--muted);font-size:.98rem}
+.ask{margin-top:auto;padding-top:.9rem;font-weight:600;color:var(--forest);text-underline-offset:4px;cursor:pointer}
+.ctl{display:flex;align-items:center;gap:1rem}
+.ctl button{width:48px;height:48px;border-radius:50%;border:2px solid var(--forest);background:#fff;color:var(--forest);cursor:pointer;display:grid;place-items:center}
+.ctl button:hover:not([aria-disabled=true]){background:var(--forest);color:#fff}
+.ctl button[aria-disabled=true]{opacity:.35;cursor:default}
+.ctl svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.5}
+.prog{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.prog i{display:block;height:100%;width:12.5%;background:var(--forest);transition:transform .3s}
+#cnt{font-weight:600;min-width:3.2rem;text-align:right}
+
+@media (max-width:860px){
+  .hero .grid,.about,.csr,.cgrid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .ind ul{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){header{position:static}html{scroll-padding-top:0}}
+@media (max-width:540px){.pgrid{grid-template-columns:1fr}nav{gap:.9rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="IPC SARLU home"><i></i>IPC SARLU</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a><a href="#products">Products</a><a href="#industries">Industries</a><a href="#csr">Sustainability</a><a href="#contact">Contact</a>
+      <span class="soc">
+        <!-- TODO: replace # with the new Facebook page and the LinkedIn page URLs -->
+        <a href="#" aria-label="IPC SARLU on Facebook" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.5-3.2h-3.2V7.8c0-.9.3-1.6 1.7-1.6h1.6V3.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.5H7.5V13h2.9v8h3.1z"/></svg></a>
+        <a href="#" aria-label="IPC SARLU on LinkedIn" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.9H3.8V20h3.1V8.9zM5.3 4a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6zM20 20v-6.1c0-3-1.6-4.4-3.8-4.4-1.7 0-2.5.9-2.9 1.6V8.9h-3.1V20h3.1v-6c0-1.6.3-3.1 2.2-3.1s1.9 1.8 1.9 3.2V20H20z"/></svg></a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <h1>Cartons built to the size, strength and print you need.</h1>
+      <p class="lead">IPC SARLU makes custom corrugated packaging in Ivato, Madagascar: single, double and triple wall, with multi-colour printing, for local businesses and export.</p>
+      <div class="cta"><a class="btn btn-k" href="#contact">Request a quote</a><a class="btn btn-o" href="#products">See our products</a></div>
+    </div>
+    <div class="walls">
+      <div class="tabs" role="tablist" aria-label="Carton wall type">
+        <button role="tab" aria-selected="true" data-n="1">Single wall</button>
+        <button role="tab" aria-selected="false" data-n="2">Double wall</button>
+        <button role="tab" aria-selected="false" data-n="3">Triple wall</button>
+      </div>
+      <svg id="wallsvg" viewBox="0 0 480 230" role="img" aria-label="Cross-section of the selected corrugated board"></svg>
+      <p id="walltxt"></p>
+    </div>
+  </div>
+  <div class="flute" aria-hidden="true"></div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>A carton factory in Ivato, serving Madagascar since the early 2000s</h2>
+      <p>IPC SARLU is a leading supplier to the local and free zone markets. Our team guides you from the first sketch to the finished carton, so your packaging protects the product and carries your brand.</p>
+      <p style="margin-top:1rem">We work with FSC certified partners and follow FSC Chain of Custody guidelines.</p>
+    </div>
+    <div class="ph" data-label="Photo: IPC factory floor, Ivato" data-src=""></div>
+  </div>
+</section>
+
+<section class="pillars" id="why">
+  <div class="wrap">
+    <h2>What we stand for</h2>
+    <div class="pgrid">
+      <div><h3>Tailor-made customization</h3><p>Custom cardboard solutions for multi-colour printing requests and single-to-triple wall dimensional specs.</p></div>
+      <div><h3>Sustainable eco-production</h3><p>We follow FSC Chain of Custody guidelines, with environmental compliance and responsible forest management as priorities.</p></div>
+      <div><h3>Waste minimization mindset</h3><p>Our people know the raw material comes from responsibly managed forests, and work to cut off-cut waste when sizing custom orders.</p></div>
+      <div><h3>Malagasy workforce development</h3><p>We invest in local manufacturing talent and engineering training, and offer stable technical careers in Malagasy industry.</p></div>
+      <div><h3>Value for money</h3><p>Local businesses should never have to choose between a box they can afford and a box that protects their products.</p></div>
+      <div><h3>Alignment with international norms</h3><p>Ethically sourced, FSC certified materials and standardized testing protocols give you export-ready packaging that customs and global retail networks accept.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <h2>Our products</h2>
+    <p>Every product is made to your dimensions and printing requirements.</p>
+    <div class="chips" role="group" aria-label="Product families">
+      <button data-f="0" aria-pressed="true">Standard shipping and storage</button>
+      <button data-f="1" aria-pressed="false">Food and bakery packaging</button>
+      <button data-f="2" aria-pressed="false">Specialized protection and industrial goods</button>
+    </div>
+  </div>
+  <!-- Photos: put the URL of a real IPC photo in the data-src of a card's .art block to replace its illustration. -->
+  <div class="car" id="car" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Our products, scroll sideways">
+      <article class="card" role="group" aria-roledescription="slide" data-fam="0" data-art="rsc"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Standard shipping and storage</span><h3>Caisse américaine</h3><p>Regular slotted carton (RSC), the standard shipping box.</p><a class="ask" href="#contact" data-p="Caisse américaine">Ask for a quote</a></div></article>
+      <article class="card" role="group" aria-roledescription="slide" data-fam="0" data-art="lid"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Standard shipping and storage</span><h3>Boîtes et couvercles</h3><p>Box and lid sets, and telescopic boxes.</p><a class="ask" href="#contact" data-p="Boîtes et couvercles">Ask for a quote</a></div></article>
+      <article class="card" role="group" aria-roledescription="slide" data-fam="0" data-art="arc"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Standard shipping and storage</span><h3>Bac carton et boîtes d’archives</h3><p>Cardboard bins and archive or storage boxes.</p><a class="ask" href="#contact" data-p="Bac carton et boîtes d’archives">Ask for a quote</a></div></article>
+      <article class="card" role="group" aria-roledescription="slide" data-fam="1" data-art="piz"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Food and bakery packaging</span><h3>Boîtes à pizza et gâteaux</h3><p>Pizza and cake boxes.</p><a class="ask" href="#contact" data-p="Boîtes à pizza et gâteaux">Ask for a quote</a></div></article>
+      <article class="card" role="group" aria-roledescription="slide" data-fam="1" data-art="tray"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Food and bakery packaging</span><h3>Barquette</h3><p>Cardboard trays and food punnets.</p><a class="ask" href="#contact" data-p="Barquette">Ask for a quote</a></div></article>
+      <article class="card" role="group" aria-roledescription="slide" data-fam="2" data-art="wp"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Specialized protection and industrial goods</span><h3>Carton imperméable</h3><p>Waterproof, moisture-resistant cardboard.</p><a class="ask" href="#contact" data-p="Carton imperméable">Ask for a quote</a></div></article>
+      <article class="card" role="group" aria-roledescription="slide" data-fam="2" data-art="grid"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Specialized protection and industrial goods</span><h3>Carton avec croisillons</h3><p>Boxes with dividers and partition grids.</p><a class="ask" href="#contact" data-p="Carton avec croisillons">Ask for a quote</a></div></article>
+      <article class="card" role="group" aria-roledescription="slide" data-fam="2" data-art="roll"><div class="art" data-src=""></div><div class="body"><span class="fam-name">Specialized protection and industrial goods</span><h3>Rouleau simple face</h3><p>Single-face corrugated roll for wrapping and cushioning.</p><a class="ask" href="#contact" data-p="Rouleau simple face">Ask for a quote</a></div></article>
+  </div>
+  <div class="wrap ctl">
+    <button id="prev" aria-label="Previous product"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button id="next" aria-label="Next product"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="prog" aria-hidden="true"><i></i></div><span id="cnt" aria-live="polite">1 / 8</span>
+  </div>
+</section>
+
+<section class="ind" id="industries">
+  <div class="wrap">
+    <h2>Industries we serve</h2>
+    <ul>
+      <li>Textile and garment manufacturing</li>
+      <li>Agriculture and agro-exports</li>
+      <li>Food and foodservice</li>
+      <li>Refrigerated and frozen goods</li>
+      <li>Consumer goods and heavy industry</li>
+    </ul>
+  </div>
+</section>
+
+<section id="csr">
+  <div class="wrap csr">
+    <div class="ph" data-label="Photo: IPC team planting trees" data-src=""></div>
+    <div>
+      <h2>Our annual reforestation commitment: giving back to the soil of Madagascar</h2>
+      <p>At IPC SARLU, our relationship with paper and cardboard goes far beyond the walls of our factory in Ivato. A sustainable packaging industry must give back to the environment, so every year our entire team steps away from the production floor to plant thousands of trees across the Malagasy landscape.</p>
+      <p style="margin-top:1rem">Our reforestation campaign (<i>Campagne de Reboisement</i>) unites our factory operators, design engineers and management. Together, we roll up our sleeves in the rainy season to dig, plant and nourish the soil.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap cgrid">
+    <div>
+      <h2>Tell us what you need to pack</h2>
+      <p>Send the product, the size and the quantity. We reply with a quote.</p>
+      <address>
+        IPC SARLU<br>LOT K4 103B Ampandroana, Ivato<br>Antananarivo, Madagascar<br>
+        <a href="tel:+261320788893">+261 32 07 888 93</a><br>
+        <a href="mailto:sales@packagingmada.com">sales@packagingmada.com</a>
+      </address>
+    </div>
+    <form id="f" novalidate>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Message<textarea name="msg" required></textarea></label>
+      <button class="btn btn-k" type="submit">Send message</button>
+      <p id="fmsg" role="status" style="color:#F2C98E"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> IPC SARLU, Ivato, Madagascar. We work with FSC certified partners.</span>
+    <span class="soc"><a href="#" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.5-3.2h-3.2V7.8c0-.9.3-1.6 1.7-1.6h1.6V3.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.5H7.5V13h2.9v8h3.1z"/></svg></a><a href="#" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.9H3.8V20h3.1V8.9zM5.3 4a1.8 1.8 0 100 3.6 1.8 1.8 0 000-3.6zM20 20v-6.1c0-3-1.6-4.4-3.8-4.4-1.7 0-2.5.9-2.9 1.6V8.9h-3.1V20h3.1v-6c0-1.6.3-3.1 2.2-3.1s1.9 1.8 1.9 3.2V20H20z"/></svg></a></span>
+  </div>
+</footer>
+
+<script>
+/* Photos: paste the URL of each real IPC photo into the matching data-src attribute above. */
+document.querySelectorAll('.ph[data-src]').forEach(function(el){
+  var s = el.getAttribute('data-src');
+  if(s){ el.style.backgroundImage = 'url("'+s+'")'; el.classList.add('on'); }
+});
+
+/* Carton wall explorer */
+var TXT = {
+  1:'Single wall suits household and foodstuff products and light industrial goods.',
+  2:'Double wall suits garment manufacturing exports and agricultural exports.',
+  3:'Triple wall suits export packaging by sea or air for extremely heavy items.'
+};
+function wave(y, x0, x1){
+  var d = 'M'+x0+' '+y, x = x0;
+  while(x < x1){ d += ' q10 -22 20 0 t20 0'; x += 40; }
+  return d;
+}
+function drawWall(n){
+  var svg = document.getElementById('wallsvg'), out = '', y = 20, x0 = 20, x1 = 460;
+  var line = function(yy){ return '<path d="M'+x0+' '+yy+' H'+x1+'" fill="none" stroke="currentColor" stroke-width="5"/>'; };
+  out += line(y);
+  for(var i = 0; i < n; i++){
+    out += '<path d="'+wave(y + 40, x0, x1)+'" fill="none" stroke="currentColor" stroke-width="3.5"/>';
+    y += 56;
+    out += line(y);
+  }
+  svg.setAttribute('viewBox', '0 0 480 ' + (y + 20));
+  svg.innerHTML = out;
+  document.getElementById('walltxt').textContent = TXT[n];
+}
+document.querySelectorAll('.tabs button').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.tabs button').forEach(function(o){ o.setAttribute('aria-selected', o === b); });
+    drawWall(+b.dataset.n);
+  });
+});
+drawWall(1);
+
+/* Product illustrations (isometric, drawn in code) and carousel */
+function pt(x,y,a,b,c){return (x+(a-b)*.87).toFixed(1)+','+(y+(a+b)*.5-c).toFixed(1)}
+function poly(x,y,q,cl){return '<polygon class="'+cl+'" points="'+q.map(function(p){return pt(x,y,p[0],p[1],p[2])}).join(' ')+'"/>'}
+function box(x,y,A,B,C,open,t){
+  var r=poly(x,y,[[0,B,0],[A,B,0],[A,B,C],[0,B,C]],'f2')+poly(x,y,[[A,0,0],[A,B,0],[A,B,C],[A,0,C]],'f3');
+  r+=poly(x,y,[[0,0,C],[A,0,C],[A,B,C],[0,B,C]],'f1');
+  if(open){t=t||7;r+=poly(x,y,[[t,t,C],[A-t,t,C],[A-t,B-t,C],[t,B-t,C]],'fin')}
+  return r}
+function org(A,B,C){return [150-(A-B)*.435,(225-(C+(A+B)/2))/2+C-4]}
+function sh(cy){return '<ellipse cx="150" cy="'+(cy||200)+'" rx="105" ry="12" style="fill:rgba(60,40,10,.18);stroke:none"/>'}
+function svg(i,cy){return '<svg viewBox="0 0 300 225" aria-hidden="true">'+sh(cy)+i+'</svg>'}
+var ART={
+ rsc:function(){var A=100,B=80,C=70,o=org(A,B,C),x=o[0],y=o[1];
+  return box(x,y,A,B,C)+poly(x,y,[[42,0,C],[58,0,C],[58,B,C],[42,B,C]],'tape')+poly(x,y,[[42,B,C],[58,B,C],[58,B,C-24],[42,B,C-24]],'tape')},
+ lid:function(){var o=org(100,80,86),x=o[0],y=o[1];
+  return box(x,y+5,90,70,40,true)+box(x,y-58,100,80,28)},
+ arc:function(){var A=100,B=70,C=62,o=org(A,B,C),x=o[0],y=o[1];
+  return box(x,y,A,B,C,true,6)+poly(x,y,[[28,B,40],[72,B,40],[72,B,50],[28,B,50]],'fin')+poly(x,y,[[A,14,46],[A,B-14,46],[A,B-14,16],[A,14,16]],'lab')},
+ piz:function(){var i,x=100,y=98;
+  i=box(205,72,52,52,46)+poly(205,72,[[0,23,46],[52,23,46],[52,29,46],[0,29,46]],'tape');
+  i+=box(x,y,90,90,14)+'<ellipse cx="'+pt(x,y,45,45,14).split(',')[0]+'" cy="'+pt(x,y,45,45,14).split(',')[1]+'" rx="46" ry="26" style="fill:#E7B04A"/>';
+  var d=[[-14,-6],[10,-12],[16,8],[-8,10],[2,0]];
+  d.forEach(function(q){var c=pt(x,y,45,45,14).split(',');i+='<ellipse cx="'+(+c[0]+q[0]*1.4)+'" cy="'+(+c[1]+q[1])+'" rx="6" ry="3.4" style="fill:#B8432F"/>'});
+  return i},
+ tray:function(){var A=116,B=74,C=24,o=org(A,B,C),x=o[0],y=o[1],i=box(x,y,A,B,C,true,8),cl=['#B8432F','#2F7A4F','#E1A82B'];
+  [30,58,86].forEach(function(a,k){var c=pt(x,y,a,B/2,C-2).split(',');i+='<ellipse cx="'+c[0]+'" cy="'+c[1]+'" rx="13" ry="10" style="fill:'+cl[k]+'"/>'});
+  return i},
+ wp:function(){var A=100,B=80,C=70,o=org(A,B,C),x=o[0],y=o[1],c=pt(x,y,A/2,B,C/2).split(',').map(Number),X=c[0],Y=c[1];
+  return box(x,y,A,B,C)+'<path d="M'+X+' '+(Y-20)+'C'+(X+15)+' '+(Y-2)+' '+(X+14)+' '+(Y+16)+' '+X+' '+(Y+16)+'C'+(X-14)+' '+(Y+16)+' '+(X-15)+' '+(Y-2)+' '+X+' '+(Y-20)+'Z" style="fill:#E6F2F8;stroke:#2F6F9F;stroke-width:2.2"/>'},
+ grid:function(){var A=100,B=80,C=62,o=org(A,B,C),x=o[0],y=o[1],h=C-3,l=C-25;
+  return box(x,y,A,B,C,true,5)+poly(x,y,[[8,40,h],[A-8,40,h],[A-8,40,l],[8,40,l]],'dv')+poly(x,y,[[34,8,h],[34,B-8,h],[34,B-8,l],[34,8,l]],'dv')+poly(x,y,[[67,8,h],[67,B-8,h],[67,B-8,l],[67,8,l]],'dv')},
+ roll:function(){var i='<ellipse cx="72" cy="100" rx="26" ry="46" class="f1"/><path d="M72 54H182V146H72Z" class="f1" style="stroke:none"/><path d="M72 54H182M72 146H182" fill="none"/>';
+  for(var k=0;k<5;k++){i+='<path d="M'+(92+k*17)+' 56V144" style="stroke:#9A6B2C;stroke-width:1;fill:none"/>'}
+  i+='<ellipse cx="182" cy="100" rx="26" ry="46" class="f2"/><ellipse cx="182" cy="100" rx="19" ry="33" class="f1"/><ellipse cx="182" cy="100" rx="12" ry="21" class="f2"/><ellipse cx="182" cy="100" rx="5" ry="9" class="fin"/>';
+  i+='<polygon class="f1" points="100,146 190,146 256,178 172,178"/><path d="M172 178q6-9 12 0t12 0 12 0 12 0 12 0 12 0 12 0" fill="none" style="stroke-width:2.5"/><path d="M172 183H256" fill="none" style="stroke-width:4"/>';
+  return i}
+};
+(function(){
+  var car=document.getElementById('car'),cards=[].slice.call(car.children),n=cards.length;
+  var chips=[].slice.call(document.querySelectorAll('.chips button')),prev=document.getElementById('prev'),next=document.getElementById('next');
+  var cnt=document.getElementById('cnt'),bar=document.querySelector('.prog i'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  bar.style.width=(100/n)+'%';
+  cards.forEach(function(c,i){
+    var a=c.querySelector('.art'),s=a.getAttribute('data-src');
+    a.innerHTML=svg(ART[c.dataset.art](),c.dataset.art==='roll'?186:200);
+    c.setAttribute('aria-label',(i+1)+' of '+n);
+    if(s){a.style.backgroundImage='url("'+s+'")';a.classList.add('on')}
+  });
+  function padL(){return parseFloat(getComputedStyle(car).paddingLeft)}
+  function idx(){
+    if(car.scrollLeft+car.clientWidth>=car.scrollWidth-4)return n-1;
+    var p=padL(),b=0,d=1e9;
+    cards.forEach(function(c,i){var k=Math.abs(c.offsetLeft-car.scrollLeft-p);if(k<d){d=k;b=i}});
+    return b}
+  var tgt=null,tm;function now(){return tgt!==null?tgt:idx()}
+  function go(i){i=Math.max(0,Math.min(n-1,i));tgt=i;clearTimeout(tm);tm=setTimeout(function(){tgt=null},800);car.scrollTo({left:cards[i].offsetLeft-padL(),behavior:reduce?'auto':'smooth'})}
+  function ui(){
+    var i=idx(),f=+cards[i].dataset.fam;
+    cnt.textContent=(i+1)+' / '+n;bar.style.transform='translateX('+(i*100)+'%)';
+    prev.setAttribute('aria-disabled',i===0);next.setAttribute('aria-disabled',i===n-1);
+    chips.forEach(function(c){c.setAttribute('aria-pressed',+c.dataset.f===f)});
+  }
+  var t;car.addEventListener('scroll',function(){cancelAnimationFrame(t);t=requestAnimationFrame(ui)},{passive:true});
+  prev.addEventListener('click',function(){go(now()-1)});
+  next.addEventListener('click',function(){go(now()+1)});
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    for(var i=0;i<n;i++){if(+cards[i].dataset.fam===+c.dataset.f){go(i);break}}})});
+  car.querySelectorAll('.ask').forEach(function(a){a.addEventListener('click',function(){
+    var m=document.querySelector('#f textarea');if(!m.value.trim())m.value='Product: '+a.dataset.p+'\nSize and quantity: '})});
+  ui();
+})();
+
+/* Contact form: opens the visitor's email app addressed to sales. Swap for a form service later if wanted. */
+document.getElementById('f').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target, m = document.getElementById('fmsg');
+  if(!f.name.value.trim() || !/\S+@\S+\.\S+/.test(f.email.value) || !f.msg.value.trim()){
+    m.textContent = 'Please fill in your name, a valid email and your message.'; return;
+  }
+  var body = f.msg.value + '\n\n' + f.name.value + ' (' + f.email.value + ')';
+  location.href = 'mailto:sales@packagingmada.com?subject=' + encodeURIComponent('Quote request from ' + f.name.value) + '&body=' + encodeURIComponent(body);
+  m.textContent = 'Your email app should open with the message ready to send.';
+});
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
